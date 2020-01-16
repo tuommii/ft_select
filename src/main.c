@@ -6,7 +6,7 @@
 /*   By: mtuomine <mtuomine@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/05 19:49:09 by mtuomine          #+#    #+#             */
-/*   Updated: 2020/01/15 12:16:55 by mtuomine         ###   ########.fr       */
+/*   Updated: 2020/01/16 18:19:36 by mtuomine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	display_loop(t_list **list, t_terminal *term)
 		watch_kill(list);
 		tputs(CL, 1, print_char);
 		get_term_size(term);
-		print_data(*list, term);
+		print_info(*list, term);
 		pressed = keyboard(list, term);
 		if (pressed == PRESSED_KEY)
 			continue ;
@@ -58,7 +58,7 @@ int			main(int argc, char **argv)
 	config_terminal(0);
 	code = display_loop(&list, &term);
 	config_terminal(1);
-	print_selected(code, list, term);
+	print_results(code, list, term);
 	cleanup(&list);
 	exit(0);
 }

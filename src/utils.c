@@ -6,7 +6,7 @@
 /*   By: mtuomine <mtuomine@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 15:07:28 by mtuomine          #+#    #+#             */
-/*   Updated: 2020/01/15 11:53:37 by mtuomine         ###   ########.fr       */
+/*   Updated: 2020/01/16 18:20:04 by mtuomine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,9 +92,4 @@ void	cleanup(t_list **list)
 		free(temp->content);
 		free(temp);
 	}
-}
-
-int		print_char(int c)
-{
-	return (write(STDIN_FILENO, &c, 1));
 }

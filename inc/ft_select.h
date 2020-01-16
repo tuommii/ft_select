@@ -6,7 +6,7 @@
 /*   By: mtuomine <mtuomine@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/05 19:51:17 by mtuomine          #+#    #+#             */
-/*   Updated: 2020/01/15 12:51:52 by mtuomine         ###   ########.fr       */
+/*   Updated: 2020/01/16 18:19:36 by mtuomine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,9 +105,9 @@ void				traverse_args(t_list *lst, t_terminal *term, \
 					void(*f)(t_list *elem, t_terminal *term));
 void				delete_arg(t_arg *arg);
 
-void				print_data(t_list *list, t_terminal *term);
-void				print_row(t_list *node, t_terminal *term);
-void				print_selected(int code, t_list *list, t_terminal term);
+void				print_info(t_list *list, t_terminal *term);
+void				print_arg(t_list *node, t_terminal *term);
+void				print_results(int code, t_list *list, t_terminal term);
 int					print_char(int c);
 
 void				move_left(t_terminal *term);

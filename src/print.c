@@ -6,13 +6,13 @@
 /*   By: mtuomine <mtuomine@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 10:59:39 by mtuomine          #+#    #+#             */
-/*   Updated: 2020/01/15 12:03:08 by mtuomine         ###   ########.fr       */
+/*   Updated: 2020/01/16 18:20:16 by mtuomine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_select.h"
 
-void	print_data(t_list *list, t_terminal *term)
+void	print_info(t_list *list, t_terminal *term)
 {
 	if (term->height < term->rows_needed)
 	{
@@ -21,17 +21,13 @@ void	print_data(t_list *list, t_terminal *term)
 	}
 	else
 	{
-		ft_dprintf(OUTPUT, "NEEDED: %d\n", term->rows_needed);
-		ft_dprintf(OUTPUT, "AVAILABE: %d\n", term->height);
 		ft_dprintf(OUTPUT, "CURSOR: %d\n", term->i);
-		ft_dprintf(OUTPUT, "CODE: %d\n", term->code);
 		ft_dprintf(OUTPUT, "SELECTED: %d\n", term->selected_count);
-		ft_dprintf(OUTPUT, "MAX_LEN: %d\n", term->max_len);
-		traverse_args(list, term, print_row);
+		traverse_args(list, term, print_arg);
 	}
 }
 
-void	print_row(t_list *node, t_terminal *term)
+void	print_arg(t_list *node, t_terminal *term)
 {
 	t_arg	*arg;
 	int		delta;
@@ -58,7 +54,7 @@ void	print_row(t_list *node, t_terminal *term)
 		ft_dprintf(2, " ");
 }
 
-void	print_selected(int code, t_list *list, t_terminal term)
+void	print_results(int code, t_list *list, t_terminal term)
 {
 	int		counter;
 	t_arg	*arg;
@@ -81,4 +77,9 @@ void	print_selected(int code, t_list *list, t_terminal term)
 	}
 	if (counter)
 		ft_dprintf(STDOUT_FILENO, "\n");
+}
+
+int		print_char(int c)
+{
+	return (write(STDIN_FILENO, &c, 1));
 }
