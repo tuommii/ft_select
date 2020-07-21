@@ -6,7 +6,7 @@
 /*   By: mtuomine <mtuomine@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 10:59:39 by mtuomine          #+#    #+#             */
-/*   Updated: 2020/01/16 18:20:16 by mtuomine         ###   ########.fr       */
+/*   Updated: 2020/07/21 20:08:28 by mtuomine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ void	print_info(t_list *list, t_terminal *term)
 	}
 	else
 	{
-		ft_dprintf(OUTPUT, "CURSOR: %d\n", term->i);
-		ft_dprintf(OUTPUT, "SELECTED: %d\n", term->selected_count);
 		traverse_args(list, term, print_arg);
 	}
 }
