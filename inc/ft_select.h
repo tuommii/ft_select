@@ -6,7 +6,7 @@
 /*   By: mtuomine <mtuomine@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/05 19:51:17 by mtuomine          #+#    #+#             */
-/*   Updated: 2020/01/16 18:19:36 by mtuomine         ###   ########.fr       */
+/*   Updated: 2020/07/22 09:43:43 by mtuomine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,26 +20,6 @@
 # include <term.h>
 # include <termios.h>
 # include <unistd.h>
-
-/*
-** Highlight
-*/
-
-# define SO (tgetstr("so", NULL))
-# define SE (tgetstr("se", NULL))
-
-/*
-** Underline
-*/
-
-# define US (tgetstr("us", NULL))
-# define UE (tgetstr("ue", NULL))
-
-/*
-** Clear
-*/
-
-# define CL (tgetstr("cl", NULL))
 
 # define KEYBOARD_BUFF_LEN 4
 

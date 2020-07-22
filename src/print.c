@@ -6,7 +6,7 @@
 /*   By: mtuomine <mtuomine@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 10:59:39 by mtuomine          #+#    #+#             */
-/*   Updated: 2020/07/21 20:08:28 by mtuomine         ###   ########.fr       */
+/*   Updated: 2020/07/22 09:43:18 by mtuomine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	print_info(t_list *list, t_terminal *term)
 {
 	if (term->height < term->rows_needed)
 	{
-		tputs(CL, 1, print_char);
+		tputs(tgetstr("cl", NULL), 1, print_char);
 		ft_dprintf(OUTPUT, "No enough space to show options!\n");
 	}
 	else
@@ -40,14 +40,14 @@ void	print_arg(t_list *node, t_terminal *term)
 	len = ft_strlen(arg->text);
 	delta = term->max_len - len;
 	if (arg->underlined)
-		tputs(US, 1, print_char);
+		tputs(tgetstr("us", NULL), 1, print_char);
 	if (arg->selected)
-		tputs(SO, 1, print_char);
+		tputs(tgetstr("so", NULL), 1, print_char);
 	ft_dprintf(OUTPUT, "%s", arg->text);
 	if (arg->selected)
-		tputs(SE, 1, print_char);
+		tputs(tgetstr("se", NULL), 1, print_char);
 	if (arg->underlined)
-		tputs(UE, 1, print_char);
+		tputs(tgetstr("ue", NULL), 1, print_char);
 	while (delta-- > 0)
 		ft_dprintf(2, " ");
 }

@@ -6,7 +6,7 @@
 /*   By: mtuomine <mtuomine@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 20:48:22 by mtuomine          #+#    #+#             */
-/*   Updated: 2020/01/15 12:19:55 by mtuomine         ###   ########.fr       */
+/*   Updated: 2020/07/22 09:43:29 by mtuomine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	handle_sigcont(void)
 
 static void	handle_resize(void)
 {
-	tputs(CL, 1, print_char);
+	tputs(tgetstr("cl", NULL), 1, print_char);
 	ioctl(OUTPUT, TIOCSTI, "");
 }
 
